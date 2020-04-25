@@ -1,0 +1,1542 @@
+
+D:\PPT>cd python/hands
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> l = [1,2,3]
+>>> len(l)
+3
+>>> 1 == 2
+False
+>>> "OK" == "OK"
+True
+>>> "OK" is "OK"
+True
+>>> "OK1234" is "OK1234"
+True
+>>> from pkg.MyInt import MyInt
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "D:\PPT\python\hands\pkg\MyInt.py", line 42, in <modu
+le>
+    px = Poly( 2, 1,1)   #an , an-1, ......,a0
+NameError: name 'Poly' is not defined
+>>> from pkg.MyInt import MyInt
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "D:\PPT\python\hands\pkg\MyInt.py", line 42, in <modu
+le>
+    px = Poly( 2, 1,1)   #an , an-1, ......,a0
+NameError: name 'Poly' is not defined
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "D:\PPT\python\hands\pkg\MyInt.py", line 42, in <modu
+le>
+    px = Poly( 2, 1,1)   #an , an-1, ......,a0
+NameError: name 'Poly' is not defined
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> a == MyInt(2)
+True
+>>> a is MyInt(2)
+False
+>>> type(1) is int
+True
+>>> type(1) is float
+False
+>>> type(1.2) is float
+True
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "D:\PPT\python\hands\pkg\MyInt.py", line 55
+    for ele in array:
+                    ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+>>> from pkg.MyInt import Poly
+>>> a = Poly(1,2,3)
+>>> a.__dict__
+{'coeff': (1, 2, 3), 'deg': 2}
+>>> print(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "D:\PPT\python\hands\pkg\MyInt.py", line 68, in __str
+__
+    return "Poly(" + self.coeff + ")"
+TypeError: Can't convert 'tuple' object to str implicitly
+>>> c = a + 2
+>>> c.__dict__
+{'coeff': (1, 2, 5), 'deg': 2}
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> a = Poly(1,2,3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Poly' is not defined
+>>> from pkg.MyInt import Poly
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "D:\PPT\python\hands\pkg\MyInt.py", line 66
+    elif if self.deg == other.deg:
+          ^
+SyntaxError: invalid syntax
+>>> from pkg.MyInt import Poly
+>>> a = Poly(1,2,3)
+>>> c = a + a
+>>> print(c)
+Poly((2, 4, 6))
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> a = Poly(1,2,3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Poly' is not defined
+>>> from pkg.MyInt import Poly
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "D:\PPT\python\hands\pkg\MyInt.py", line 74
+    self._expand(other.deg),other._expand(self.deg)]
+                                                   ^
+SyntaxError: invalid syntax
+>>> from pkg.MyInt import Poly
+>>> a = Poly(1,2,3)
+>>> c = a+a
+>>> print(c)
+Poly((2, 4, 6))
+>>> b = Poly(2,3,1,2,3)
+>>> c = a + b
+>>> print(c)
+Poly((2, 3, 2, 4, 6))
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(1,2,3)
+>>> c = a+a
+>>> print(c)
+Poly(2, 4, 6)
+>>> b = Poly(2,3,1,2,3)
+>>> c = a + b
+>>> print(c)
+Poly(2, 3, 2, 4, 6)
+>>> c = a + 3
+>>> print(c)
+Poly(1, 2, 6)
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(1,2,3)
+>>> print(a-a)
+Poly(0, 0, 0)
+>>> print(a+a)
+Poly(2, 4, 6)
+>>> print(a+2)
+Poly(1, 2, 5)
+>>> print(a+Poly(1,1,1,1))
+Poly(1, 2, 3, 4)
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "D:\PPT\python\hands\pkg\MyInt.py", line 54
+    return ([0] * (newdeg-self.deg))+list(self.coeff) if sel
+f.deg < newdeg
+
+              ^
+SyntaxError: invalid syntax
+>>> from pkg.MyInt import Poly
+>>> a = Poly(1,2,3)
+>>> print(a-a)
+Poly(0, 0, 0)
+>>> print(a+a)
+Poly(2, 4, 6)
+>>> print(a+2)
+Poly(1, 2, 5)
+>>> print(a+Poly(1,1,1,1))
+Poly(1, 2, 3, 4)
+>>> (0,) * 5
+(0, 0, 0, 0, 0)
+>>> "Hello"
+'Hello'
+>>> r"\w+"
+'\\w+'
+>>> "123"
+'123'
+>>> r"\d+"
+'\\d+'
+>>> s = "Name:xyz"
+>>> p = r"Name:(\w+)"
+>>> import re
+>>> re.findall(p,s)
+['xyz']
+>>> s1 = "NAme:OK,TP"
+>>> s1.aplit(":,")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'aplit'
+>>> s1.split(":,")
+['NAme:OK,TP']
+>>> p = r":|,"
+>>> re.split(p,s1)
+['NAme', 'OK', 'TP']
+>>> s2 = "There is cat cat"
+>>> s2 = "There is cat cat in in house"
+>>> re.sub(r"(\w+)\s+\1", r"\1", s2)
+'There is cat in house'
+>>> s = "ssssesshu"
+>>> s1 = "ABCD"
+>>> re.findall(r"\w\w",s1)
+['AB', 'CD']
+>>> re.findall(r"(?=(\w\w))",s1)
+['AB', 'BC', 'CD']
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(0,0,1,2,0,3)
+>>> print(a)
+3*X^50*X^42*X^31*X^20*X^10*X^0
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(0,0,1,-2,0,3)
+>>> print(a)
+3*X^5+0*X^4+-2*X^3+1*X^2+0*X^1+0*X^0+
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(0,0,1,-2,0,3)
+>>> print(a)
+3*x^5+ 0*x^4+ -2*x^3+ 1*x^2+ 0*x^1+ 0*x^0+
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(0,0,1,-2,0,3)
+>>> print(a)
+3*x^1+ 0*x^2+ -2*x^3+ 1*x^4+ 0*x^5+ 0*x^6+
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(0,0,1,-2,0,3)
+>>> print(a)
+0*x^5+ 0*x^4+ 1*x^3+ -2*x^2+ 0*x^1+ 3*x^0+
+>>> sp = r"0\*x\^\d+\+"
+>>> s = a.__str__()
+>>> s
+'0*x^5+ 0*x^4+ 1*x^3+ -2*x^2+ 0*x^1+ 3*x^0+ '
+>>> re.sub(sp,"",s)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 're' is not defined
+>>> import re
+>>> re.sub(sp,"",s)
+'  1*x^3+ -2*x^2+  3*x^0+ '
+>>> sp2 = r"\+\s\-"
+>>> sps2= r"\-"
+>>> s1 =re.sub(sp,"",s)
+>>> s2 =re.sub(sp2,sps2,s1)
+>>> s2
+'  1*x^3\\-2*x^2+  3*x^0+ '
+>>> s2 =re.sub(sp2,"-",s1)
+>>> s2
+'  1*x^3-2*x^2+  3*x^0+ '
+>>> sp3 = r"\*x\^0\+\s+"
+>>> s3 = re.sub(sp3,"",s2)
+>>> s3
+'  1*x^3-2*x^2+  3'
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(0,0,1,-2,0,3)
+>>> print(a)
+0x^5+0x^4+1x^3+-2x^2+0x^1+3x^0+
+>>> s = a.__str__()
+>>> s
+'0x^5+0x^4+1x^3+-2x^2+0x^1+3x^0+'
+>>> sp = r"0\*x\^\d+\+"
+>>> sp2 = r"\+\s\-"
+>>> sp3 = r"\*x\^0\+\s+"
+>>> sp = r"0x\^\d+\+"
+>>> sp2 = r"\+\-"
+>>> sp3 = r"\x\^0\+"
+>>> s1 = re.sub(sp,s)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 're' is not defined
+>>> import re
+>>> s1 = re.sub(sp,s)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: sub() missing 1 required positional argument: 'st
+ring'
+>>> s1 = re.sub(sp,"",s)
+>>> s1
+'1x^3+-2x^2+3x^0+'
+>>> s2 = re.sub(r"\+\-","-",s1)
+>>> s2
+'1x^3-2x^2+3x^0+'
+>>> s3 = re.sub(r"\^0\+","",s2)
+>>> s3
+'1x^3-2x^2+3x'
+>>> s4 = re.sub(r"1x\^(d+)","x^\1",s3)
+>>> s4
+'1x^3-2x^2+3x'
+>>> s4 = re.sub(r"1x\^(d+)",r"x^\1",s3)
+>>> s4
+'1x^3-2x^2+3x'
+>>> s4 = re.sub(r"1(x\^d+)",r"\1",s3)
+>>> s4
+'1x^3-2x^2+3x'
+>>> s3
+'1x^3-2x^2+3x'
+>>>
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(0,0,1,-2,0,3)
+>>> print(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "D:\PPT\python\hands\pkg\MyInt.py", line 70, in __str
+__
+    res = res.sub(r"0x\^\d+\+","",res)
+AttributeError: 'str' object has no attribute 'sub'
+>>> quit(
+... )
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(0,0,1,-2,0,3)
+>>> print(a)
+1x^3-2x^2+3
+>>> a = Poly(02,0,0,1,-2,1,3)
+  File "<stdin>", line 1
+    a = Poly(02,0,0,1,-2,1,3)
+              ^
+SyntaxError: invalid token
+>>> a = Poly(0,2,0,0,1,-2,1,3)
+>>> print(a)
+2x^6+1x^3-2x^2+1x+3
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(0,0,1,-2,0,3)
+>>> print(a)
++x^3-2x^2+3
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(0,0,1,-2,0,3)
+>>> print(a)
+x^3-2x^2+3
+>>> a = Poly(1,1,1,0,0,1,-2,0,1,3)
+>>> print(a)
+x^9+x^8+x^7+x^4-2x^3+x+3
+>>> a = Poly(1,-1,-1,0,0,1,-2,0,1,3)
+>>> print(a)
+x^9-x^8-x^7+x^4-2x^3+x+3
+>>> a = Poly(1,11,-11,0,0,1,-2,0,1,3)
+>>> print(a)
+x^9+1x^8-1x^7+x^4-2x^3+x+3
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(1,11,-11,0,0,1,-2,0,1,3)
+>>> print(a)
+1x^9+11x^8-11x^7+1x^4-2x^3+1x+3
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(1,11,-11,0,0,1,-2,0,1,3)
+>>> print(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "D:\PPT\python\hands\pkg\MyInt.py", line 74, in __str
+__
+    res = re.sub(r"(\+1x",r"+x",res)
+  File "C:\Python35\lib\re.py", line 182, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+
+  File "C:\Python35\lib\re.py", line 293, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "C:\Python35\lib\sre_compile.py", line 536, in compil
+e
+    p = sre_parse.parse(p, flags)
+  File "C:\Python35\lib\sre_parse.py", line 829, in parse
+    p = _parse_sub(source, pattern, 0)
+  File "C:\Python35\lib\sre_parse.py", line 437, in _parse_s
+ub
+    itemsappend(_parse(source, state))
+  File "C:\Python35\lib\sre_parse.py", line 781, in _parse
+    source.tell() - start)
+sre_constants.error: missing ), unterminated subpattern at p
+osition 0
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(1,11,-11,0,0,1,-2,0,1,3)
+>>> print(a)
+1x^9+11x^8-11x^7+x^4-2x^3+x+3
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import Poly
+>>> a = Poly(1,11,-11,0,0,1,-2,0,1,3)
+>>> print(a)
+x^9+11x^8-11x^7+x^4-2x^3+x+3
+>>> 11111111111111111111111111111111111111111111111111111111
+111111111111111111111111111111111111111111111111111111111111
+111111111111111111111111111111111111111111111111111111111111
+11111111111111111111111111111111 * 1111111111111111111111111
+1111111111111111111
+123456790123456790123456790123456790123456788888888888888888
+888888888888888888888888888888888888888888888888888888888888
+888888888888888888888888888888888888888888888888888888888888
+888888888888888888888888888876543209876543209876543209876543
+20987654321
+>>> def fib():
+...     a,b=0,1
+...     while True:
+...             yield b
+...             a,b = b,a+b
+...
+>>> for e in fib():
+...
+  File "<stdin>", line 2
+
+    ^
+IndentationError: expected an indented block
+>>> import itertools
+>>> i = iter(fib())
+>>> list(itertools.islice(i,20))
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 9
+87, 1597, 2584, 4181, 6765]
+>>> list(itertools.islice(i,20))
+[10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811,
+514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465,
+ 14930352, 24157817, 39088169, 63245986, 102334155]
+>>> list(itertools.islice(i,20))
+[165580141, 267914296, 433494437, 701408733, 1134903170, 183
+6311903, 2971215073, 4807526976, 7778742049, 12586269025, 20
+365011074, 32951280099, 53316291173, 86267571272, 1395838624
+45, 225851433717, 365435296162, 591286729879, 956722026041,
+1548008755920]
+>>> len(str(list(itertools.islice(i,20))[-1]))
+17
+>>> len(str(list(itertools.islice(i,200))[-1]))
+59
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+477
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+895
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+1313
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+1731
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+2149
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+2567
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+2984
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+3402
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+3820
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+4238
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+4656
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+5074
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+5492
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+5910
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+6328
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+6746
+>>>
+>>> def f():
+...     return 2
+...
+>>> def g():
+...     yield 3
+...     yield 4
+...     yield 6
+...
+>>> f()
+2
+>>> i = iter(g())
+>>> next(i)
+3
+>>> next(i)
+4
+>>> next(i)
+6
+>>> next(i)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>> from pkg.mex import is_prime
+>>> is_prime(1234567891)
+True
+>>> is_prime(1234567890)
+False
+>>> is_prime(11)
+True
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> import pkg.mex
+>>> pkg.mex.std([1,2,3,4])
+Entering std..
+exiting std..
+1.118033988749895
+>>> pkg.mex.median([1,2,3,4])
+2.5
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> import pkg.mex
+>>> pkg.mex.std([1,2,3,4])
+Entering  std
+Exiting  std
+1.118033988749895
+>>> pkg.mex.median([1,2,3,4])
+Entering  median
+Exiting  median
+2.5
+>>> from pkg.mex import *
+>>> trace
+<function trace at 0x0000009BE1FF3048>
+>>> median
+<function trace.<locals>._inner at 0x0000009BE1FF3268>
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.mex import *
+>>> std = trace(std)
+>>> std([1,2,3,4])
+Entering  std
+Exiting  std
+1.118033988749895
+>>> type(std)
+<class 'function'>
+>>> std
+<function trace.<locals>._inner at 0x0000002E6B5F7F28>
+>>> s = 100
+>>> s= "OK"
+>>> f = 123.3434
+>>> "%f" % (f,)
+'123.343400'
+>>> "%.2f" % (f,)
+'123.34'
+>>> "%10.2f" % (f,)
+'    123.34'
+>>> "%010.2f" % (f,)
+'0000123.34'
+>>> "%010.2f %d" % (f, 100)
+'0000123.34 100'
+>>> "%010.2f %10d" % (f, 100)
+'0000123.34        100'
+>>> "%010.2f %010d" % (f, 100)
+'0000123.34 0000000100'
+>>>
+>>>
+>>>
+>>> l = [1,2,3,4,5]
+>>> for e in l:
+...     print(e)
+...
+1
+2
+3
+4
+5
+>>> for e in l[::2]:
+...     print(e)
+...
+1
+3
+5
+>>> for e in l[:-1]:
+...     print(e)
+...
+1
+2
+3
+4
+>>> import pandas as pd
+>>> import numpy as np
+>>> import matplotlib.pyplot as plt
+>>> dft = pd.read_excel(r"data\Nifty-17_Years_Data-V1.xlsx",
+ parseDates=True, index_col=0, header=0, date_parser=lambda
+x: pd.to_datetime(x, format="%d-%b-%y"))
+>>>
+>>> dft.columns
+Index(['Open', 'High', 'Low', 'Close', 'Day Wise Variation (
+ points) ',
+       'Day Wise Variation ( %)   Open to Close '],
+      dtype='object')
+>>> dft.index
+DatetimeIndex(['2000-06-01', '2000-06-02', '2000-06-05', '20
+00-06-06',
+               '2000-06-07', '2000-06-08', '2000-06-09', '20
+00-06-12',
+               '2000-06-13', '2000-06-14',
+               ...
+               '2017-12-22', '2017-12-26', '2017-12-27', '20
+17-12-28',
+               '2017-12-29', '2018-01-01', '2018-01-02', '20
+18-01-03',
+               '2018-01-04', '2018-01-05'],
+              dtype='datetime64[ns]', name='Date', length=43
+85, freq=None)
+>>> len(dft.index)
+4385
+>>> dft.head()
+               Open     High      Low    Close  Day Wise Var
+iation ( points)   \
+Date
+
+2000-06-01  1380.40  1380.40  1345.10  1349.00
+           -31.40
+2000-06-02  1350.15  1395.35  1350.15  1389.25
+            39.10
+2000-06-05  1390.95  1461.05  1390.95  1404.60
+            13.65
+2000-06-06  1405.45  1426.15  1392.70  1421.75
+            16.30
+2000-06-07  1423.40  1442.70  1413.80  1430.35
+             6.95
+
+            Day Wise Variation ( %)   Open to Close
+Date
+2000-06-01                                 -0.022747
+2000-06-02                                  0.028960
+2000-06-05                                  0.009813
+2000-06-06                                  0.011598
+2000-06-07                                  0.004883
+>>> dft['Close']
+Date
+2000-06-01     1349.00
+2000-06-02     1389.25
+2000-06-05     1404.60
+2000-06-06     1421.75
+2000-06-07     1430.35
+2000-06-08     1463.65
+2000-06-09     1467.20
+2000-06-12     1440.40
+2000-06-13     1432.90
+2000-06-14     1435.50
+2000-06-15     1445.25
+2000-06-16     1477.30
+2000-06-19     1498.75
+2000-06-20     1507.10
+2000-06-21     1475.15
+2000-06-22     1488.25
+2000-06-23     1472.20
+2000-06-26     1451.65
+2000-06-27     1454.30
+2000-06-28     1470.00
+2000-06-29     1492.35
+2000-06-30     1471.45
+2000-07-03     1495.25
+2000-07-04     1511.30
+2000-07-05     1526.05
+2000-07-06     1516.80
+2000-07-07     1517.60
+2000-07-10     1509.65
+2000-07-11     1518.55
+2000-07-12     1533.35
+                ...
+2017-11-24    10389.70
+2017-11-27    10399.55
+2017-11-28    10370.25
+2017-11-29    10361.30
+2017-11-30    10226.55
+2017-12-01    10121.80
+2017-12-04    10127.75
+2017-12-05    10118.25
+2017-12-06    10044.10
+2017-12-07    10166.70
+2017-12-08    10265.65
+2017-12-11    10322.25
+2017-12-12    10240.15
+2017-12-13    10192.95
+2017-12-14    10252.10
+2017-12-15    10333.25
+2017-12-18    10388.75
+2017-12-19    10463.20
+2017-12-20    10444.20
+2017-12-21    10440.30
+2017-12-22    10493.00
+2017-12-26    10531.50
+2017-12-27    10490.75
+2017-12-28    10477.90
+2017-12-29    10530.70
+2018-01-01    10435.55
+2018-01-02    10442.20
+2018-01-03    10443.20
+2018-01-04    10504.80
+2018-01-05    10558.85
+Name: Close, Length: 4385, dtype: float64
+>>> dft.ix[23,'Close']
+1511.3
+>>> dft[['Open', 'Close','High','Low']]
+                Open     Close      High       Low
+Date
+2000-06-01   1380.40   1349.00   1380.40   1345.10
+2000-06-02   1350.15   1389.25   1395.35   1350.15
+2000-06-05   1390.95   1404.60   1461.05   1390.95
+2000-06-06   1405.45   1421.75   1426.15   1392.70
+2000-06-07   1423.40   1430.35   1442.70   1413.80
+2000-06-08   1430.50   1463.65   1468.70   1430.50
+2000-06-09   1464.30   1467.20   1485.50   1458.90
+2000-06-12   1464.40   1440.40   1477.55   1437.15
+2000-06-13   1438.80   1432.90   1438.80   1411.90
+2000-06-14   1434.95   1435.50   1459.15   1423.95
+2000-06-15   1437.00   1445.25   1452.80   1422.40
+2000-06-16   1443.15   1477.30   1480.85   1441.60
+2000-06-19   1477.55   1498.75   1510.45   1477.55
+2000-06-20   1498.00   1507.10   1518.05   1497.05
+2000-06-21   1524.05   1475.15   1539.10   1470.40
+2000-06-22   1475.65   1488.25   1491.40   1461.30
+2000-06-23   1487.85   1472.20   1499.85   1462.75
+2000-06-26   1472.15   1451.65   1472.15   1431.25
+2000-06-27   1452.80   1454.30   1467.15   1448.95
+2000-06-28   1453.70   1470.00   1474.70   1445.60
+2000-06-29   1471.35   1492.35   1505.75   1471.35
+2000-06-30   1490.20   1471.45   1490.65   1462.45
+2000-07-03   1473.45   1495.25   1498.70   1473.45
+2000-07-04   1496.15   1511.30   1516.80   1494.80
+2000-07-05   1511.50   1526.05   1530.90   1511.50
+2000-07-06   1525.15   1516.80   1525.15   1504.05
+2000-07-07   1517.00   1517.60   1528.15   1513.40
+2000-07-10   1518.15   1509.65   1523.20   1502.70
+2000-07-11   1510.55   1518.55   1523.10   1506.15
+2000-07-12   1518.70   1533.35   1537.10   1507.95
+...              ...       ...       ...       ...
+2017-11-24  10366.80  10389.70  10404.50  10362.25
+2017-11-27  10361.05  10399.55  10407.15  10340.20
+2017-11-28  10387.90  10370.25  10409.55  10355.20
+2017-11-29  10376.65  10361.30  10392.95  10345.90
+2017-11-30  10332.70  10226.55  10332.70  10211.25
+2017-12-01  10263.70  10121.80  10272.70  10108.55
+2017-12-04  10175.05  10127.75  10179.20  10095.70
+2017-12-05  10118.25  10118.25  10147.95  10069.10
+2017-12-06  10088.80  10044.10  10104.20  10033.35
+2017-12-07  10063.45  10166.70  10182.65  10061.90
+2017-12-08  10198.45  10265.65  10270.85  10195.25
+2017-12-11  10310.50  10322.25  10329.20  10282.05
+2017-12-12  10324.90  10240.15  10326.10  10230.20
+2017-12-13  10236.60  10192.95  10296.55  10169.85
+2017-12-14  10229.30  10252.10  10276.10  10141.55
+2017-12-15  10345.65  10333.25  10373.10  10319.65
+2017-12-18  10263.10  10388.75  10443.55  10074.80
+2017-12-19  10414.80  10463.20  10472.20  10406.00
+2017-12-20  10494.40  10444.20  10494.45  10437.15
+2017-12-21  10473.95  10440.30  10473.95  10426.90
+2017-12-22  10457.30  10493.00  10501.10  10448.25
+2017-12-26  10512.30  10531.50  10545.45  10477.95
+2017-12-27  10531.05  10490.75  10552.40  10469.25
+2017-12-28  10498.20  10477.90  10534.55  10460.45
+2017-12-29  10492.35  10530.70  10538.70  10488.65
+2018-01-01  10531.70  10435.55  10537.85  10423.10
+2018-01-02  10477.55  10442.20  10495.20  10404.65
+2018-01-03  10482.65  10443.20  10503.60  10429.55
+2018-01-04  10469.40  10504.80  10513.00  10441.45
+2018-01-05  10534.25  10558.85  10566.10  10520.10
+
+[4385 rows x 4 columns]
+>>> dft[['Open', 'Close','High','Low']].plot(kind='line')
+<matplotlib.axes._subplots.AxesSubplot object at 0x0000002E7
+0BF2198>
+>>> plt.show()
+>>> plt.savefig("first.png")
+>>> dft[['Open', 'Close','High','Low']].plot(kind='line')
+<matplotlib.axes._subplots.AxesSubplot object at 0x0000002E7
+1B524E0>
+>>> plt.savefig("first.png")
+>>> dft['2013']
+               Open     High      Low    Close  Day Wise Var
+iation ( points)   \
+Date
+
+2013-01-01  5937.65  5963.90  5935.20  5950.85
+            13.20
+2013-01-02  5982.60  6006.05  5982.00  5993.25
+            10.65
+2013-01-03  6015.80  6017.00  5986.55  6009.50
+            -6.30
+2013-01-04  6011.95  6020.75  5981.55  6016.15
+             4.20
+2013-01-07  6042.15  6042.15  5977.15  5988.40
+           -53.75
+2013-01-08  5983.45  6007.05  5964.40  6001.70
+            18.25
+2013-01-09  6006.20  6020.10  5958.45  5971.50
+           -34.70
+2013-01-10  5998.80  6005.15  5947.30  5968.65
+           -30.15
+2013-01-11  6012.40  6018.85  5940.60  5951.30
+           -61.10
+2013-01-14  5967.20  6036.90  5962.15  6024.05
+            56.85
+2013-01-15  6037.85  6068.50  6018.60  6056.60
+            18.75
+2013-01-16  6049.00  6055.95  5992.05  6001.85
+           -47.15
+2013-01-17  6001.25  6053.20  5988.10  6039.20
+            37.95
+2013-01-18  6059.85  6083.40  6048.30  6064.40
+             4.55
+2013-01-21  6085.75  6094.35  6065.10  6082.30
+            -3.45
+2013-01-22  6080.15  6101.30  6040.50  6048.50
+           -31.65
+2013-01-23  6052.85  6069.80  6021.15  6054.30
+             1.45
+2013-01-24  6046.20  6065.30  6007.85  6019.35
+           -26.85
+2013-01-25  6024.50  6080.55  6014.45  6074.65
+            50.15
+2013-01-28  6082.10  6088.40  6061.40  6074.80
+            -7.30
+2013-01-29  6064.70  6111.80  6042.45  6049.90
+           -14.80
+2013-01-30  6065.00  6071.95  6044.15  6055.75
+            -9.25
+2013-01-31  6045.65  6058.05  6025.15  6034.75
+           -10.90
+2013-02-01  6040.95  6052.95  5983.20  5998.90
+           -42.05
+2013-02-04  6025.20  6038.50  5981.25  5987.25
+           -37.95
+2013-02-05  5948.20  5970.35  5946.90  5956.90
+             8.70
+2013-02-06  5988.05  5990.90  5953.15  5959.20
+           -28.85
+2013-02-07  5936.45  5978.50  5927.60  5938.80
+             2.35
+2013-02-08  5929.10  5953.70  5883.65  5903.50
+           -25.60
+2013-02-11  5920.05  5924.15  5879.10  5897.85
+           -22.20
+...             ...      ...      ...      ...
+              ...
+2013-11-19  6197.25  6212.40  6180.20  6203.35
+             6.10
+2013-11-20  6186.85  6204.35  6106.95  6122.90
+           -63.95
+2013-11-21  6096.50  6097.35  5985.40  5999.05
+           -97.45
+2013-11-22  6027.35  6049.60  5972.80  5995.45
+           -31.90
+2013-11-25  6035.95  6123.50  6035.95  6115.35
+            79.40
+2013-11-26  6099.25  6112.70  6047.75  6059.10
+           -40.15
+2013-11-27  6062.70  6074.00  6030.30  6057.10
+            -5.60
+2013-11-28  6092.00  6112.95  6068.30  6091.85
+            -0.15
+2013-11-29  6103.90  6182.50  6103.80  6176.10
+            72.20
+2013-12-02  6171.15  6228.70  6171.15  6217.85
+            46.70
+2013-12-03  6204.25  6225.40  6191.40  6201.85
+            -2.40
+2013-12-04  6187.95  6209.15  6149.90  6160.95
+           -27.00
+2013-12-05  6262.45  6300.55  6232.00  6241.10
+           -21.35
+2013-12-06  6234.40  6275.35  6230.75  6259.90
+            25.50
+2013-12-09  6415.00  6415.25  6345.00  6363.90
+           -51.10
+2013-12-10  6354.70  6362.25  6307.55  6332.85
+           -21.85
+2013-12-11  6307.20  6326.60  6280.25  6307.90
+             0.70
+2013-12-12  6276.75  6286.85  6230.55  6237.05
+           -39.70
+2013-12-13  6201.30  6208.60  6161.40  6168.40
+           -32.90
+2013-12-16  6168.35  6183.25  6146.05  6154.70
+           -13.65
+2013-12-17  6178.20  6190.55  6133.00  6139.05
+           -39.15
+2013-12-18  6129.95  6236.00  6129.95  6217.15
+            87.20
+2013-12-19  6253.90  6263.75  6150.70  6166.65
+           -87.25
+2013-12-20  6179.95  6284.50  6170.35  6274.25
+            94.30
+2013-12-23  6267.20  6317.50  6266.95  6284.50
+            17.30
+2013-12-24  6296.45  6301.50  6262.00  6268.40
+           -28.05
+2013-12-26  6270.10  6302.75  6259.45  6278.90
+             8.80
+2013-12-27  6292.80  6324.90  6289.40  6313.80
+            21.00
+2013-12-30  6336.40  6344.05  6273.15  6291.10
+           -45.30
+2013-12-31  6307.35  6317.30  6287.30  6304.00
+            -3.35
+
+            Day Wise Variation ( %)   Open to Close
+Date
+2013-01-01                                  0.002223
+2013-01-02                                  0.001780
+2013-01-03                                 -0.001047
+2013-01-04                                  0.000699
+2013-01-07                                 -0.008896
+2013-01-08                                  0.003050
+2013-01-09                                 -0.005777
+2013-01-10                                 -0.005026
+2013-01-11                                 -0.010162
+2013-01-14                                  0.009527
+2013-01-15                                  0.003105
+2013-01-16                                 -0.007795
+2013-01-17                                  0.006324
+2013-01-18                                  0.000751
+2013-01-21                                 -0.000567
+2013-01-22                                 -0.005205
+2013-01-23                                  0.000240
+2013-01-24                                 -0.004441
+2013-01-25                                  0.008324
+2013-01-28                                 -0.001200
+2013-01-29                                 -0.002440
+2013-01-30                                 -0.001525
+2013-01-31                                 -0.001803
+2013-02-01                                 -0.006961
+2013-02-04                                 -0.006299
+2013-02-05                                  0.001463
+2013-02-06                                 -0.004818
+2013-02-07                                  0.000396
+2013-02-08                                 -0.004318
+2013-02-11                                 -0.003750
+...                                              ...
+2013-11-19                                  0.000984
+2013-11-20                                 -0.010336
+2013-11-21                                 -0.015985
+2013-11-22                                 -0.005293
+2013-11-25                                  0.013155
+2013-11-26                                 -0.006583
+2013-11-27                                 -0.000924
+2013-11-28                                 -0.000025
+2013-11-29                                  0.011829
+2013-12-02                                  0.007567
+2013-12-03                                 -0.000387
+2013-12-04                                 -0.004363
+2013-12-05                                 -0.003409
+2013-12-06                                  0.004090
+2013-12-09                                 -0.007966
+2013-12-10                                 -0.003438
+2013-12-11                                  0.000111
+2013-12-12                                 -0.006325
+2013-12-13                                 -0.005305
+2013-12-16                                 -0.002213
+2013-12-17                                 -0.006337
+2013-12-18                                  0.014225
+2013-12-19                                 -0.013951
+2013-12-20                                  0.015259
+2013-12-23                                  0.002760
+2013-12-24                                 -0.004455
+2013-12-26                                  0.001403
+2013-12-27                                  0.003337
+2013-12-30                                 -0.007149
+2013-12-31                                 -0.000531
+
+[250 rows x 6 columns]
+>>>
+>>> dft.columns
+Index(['Open', 'High', 'Low', 'Close', 'Day Wise Variation (
+ points) ',
+       'Day Wise Variation ( %)   Open to Close '],
+      dtype='object')
+>>> dft['Diff'] = dft.Close - dft.Open
+>>> dft.columns
+Index(['Open', 'High', 'Low', 'Close', 'Day Wise Variation (
+ points) ',
+       'Day Wise Variation ( %)   Open to Close ', 'Diff'],
+      dtype='object')
+>>> dft.Diff.plot(kind='bar')
+<matplotlib.axes._subplots.AxesSubplot object at 0x0000002E7
+1B524E0>
+>>> plt.show()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> import pandas as pd
+>>> import numpy as np
+>>> import matplotlib.pyplot as plt
+>>> dft = pd.read_excel(r"data\Nifty-17_Years_Data-V1.xlsx",
+ parseDates=True, index_col=0, header=0, date_parser=lambda
+x: pd.to_datetime(x, format="%d-%b-%y"))
+>>> dft.Close.describe()
+count     4385.000000
+mean      4539.145496
+std       2658.830335
+min        854.200000
+25%       1878.450000
+50%       4765.300000
+75%       6064.400000
+max      10558.850000
+Name: Close, dtype: float64
+>>> from pandas.tseries.offsets import *
+>>> dft.index.freq = Day()
+>>> dft.resample('M').mean()
+                    Open          High           Low
+ Close  \
+Date
+
+2000-06-30   1448.488636   1469.920455   1433.988636   1451.
+743182
+2000-07-31   1452.121429   1466.783333   1430.583333   1445.
+261905
+2000-08-31   1348.325000   1362.161364   1339.218182   1350.
+943182
+2000-09-30   1377.457500   1392.472500   1357.547500   1371.
+270000
+2000-10-31   1205.997619   1218.595238   1186.978571   1201.
+597619
+2000-11-30   1236.465909   1251.188636   1227.002273   1240.
+586364
+2000-12-31   1291.847500   1305.685000   1279.467500   1291.
+425000
+2001-01-31   1312.586364   1329.475000   1303.379545   1316.
+956818
+2001-02-28   1372.990000   1386.952500   1357.742500   1371.
+907500
+2001-03-31   1223.780952   1243.223810   1192.373810   1214.
+469048
+2001-04-30   1117.478947   1133.247368   1094.439474   1116.
+413158
+2001-05-31   1157.631818   1168.486364   1149.409091   1159.
+438636
+2001-06-30   1110.033333   1117.850000   1097.852381   1107.
+154762
+2001-07-31   1078.934091   1086.902273   1070.295455   1077.
+977273
+2001-08-31   1069.361905   1075.857143   1064.271429   1069.
+009524
+2001-09-30    956.517500    967.197500    937.892500    949.
+430000
+2001-10-31    951.630952    961.885714    944.850000    953.
+921429
+2001-11-30   1027.325000   1041.427500   1021.855000   1031.
+617500
+2001-12-31   1076.355263   1087.639474   1065.436842   1075.
+873684
+2002-01-31   1086.567391   1097.610870   1078.867391   1087.
+197826
+2002-02-28   1135.362500   1149.107500   1127.090000   1138.
+167500
+2002-03-31   1160.305263   1171.107895   1151.013158   1159.
+334211
+2002-04-30   1122.522727   1130.770455   1114.202273   1120.
+738636
+2002-05-31   1082.431818   1090.372727   1070.820455   1079.
+800000
+2002-06-30   1064.720000   1074.525000   1057.480000   1065.
+897500
+2002-07-31   1038.976087   1044.741304   1028.786957   1034.
+697826
+2002-08-31    975.147619    982.923810    969.630952    977.
+600000
+2002-09-30    989.147500    994.032500    981.737500    987.
+117500
+2002-10-31    955.630952    962.376190    949.690476    955.
+116667
+2002-11-30    987.365789    996.686842    984.021053    992.
+260526
+...                  ...           ...           ...
+   ...
+2015-08-31   8344.226190   8377.257143   8260.116667   8309.
+923810
+2015-09-30   7828.112500   7884.640000   7753.142500   7814.
+890000
+2015-10-31   8182.605000   8210.980000   8135.542500   8172.
+322500
+2015-11-30   7887.900000   7924.584211   7845.855263   7885.
+444737
+2015-12-31   7805.718182   7838.234091   7763.595455   7802.
+638636
+2016-01-31   7556.787500   7602.295000   7488.250000   7535.
+885000
+2016-02-29   7236.792857   7267.969048   7149.507143   7199.
+866667
+2016-03-31   7531.682500   7584.457500   7489.282500   7550.
+095000
+2016-04-30   7788.930556   7826.166667   7736.491667   7786.
+516667
+2016-05-31   7865.693182   7909.772727   7823.818182   7871.
+856818
+2016-06-30   8177.402273   8219.420455   8141.293182   8191.
+197727
+2016-07-31   8502.660000   8534.877500   8469.437500   8505.
+612500
+2016-08-31   8650.340909   8680.670455   8603.047727   8640.
+422727
+2016-09-30   8801.030000   8828.592500   8752.945000   8783.
+325000
+2016-10-31   8683.973684   8704.292105   8629.873684   8666.
+747368
+2016-11-30   8266.409524   8312.950000   8197.038095   8250.
+750000
+2016-12-31   8119.597727   8154.881818   8078.093182   8114.
+027273
+2017-01-31   8379.050000   8415.457143   8351.340476   8386.
+204762
+2017-02-28   8815.007895   8844.134211   8772.410526   8813.
+339474
+2017-03-31   9050.202273   9074.765909   9020.711364   9047.
+056818
+2017-04-30   9220.083333   9244.025000   9179.922222   9214.
+572222
+2017-05-31   9438.375000   9470.261364   9400.715909   9436.
+986364
+2017-06-30   9621.423810   9643.345238   9581.892857   9606.
+954762
+2017-07-31   9843.466667   9874.423810   9808.683333   9850.
+119048
+2017-08-31   9920.595238   9945.938095   9864.278571   9901.
+183333
+2017-09-30   9998.411905  10023.166667   9941.530952   9977.
+916667
+2017-10-31  10136.822500  10170.072500  10098.545000  10138.
+677500
+2017-11-30  10344.175000  10369.638636  10293.706818  10324.
+754545
+2017-12-31  10324.605000  10365.747500  10269.827500  10322.
+262500
+2018-01-31  10499.110000  10523.150000  10443.770000  10476.
+920000
+
+            Day Wise Variation ( points)   \
+Date
+2000-06-30                       3.254545
+2000-07-31                      -6.859524
+2000-08-31                       2.618182
+2000-09-30                      -6.187500
+2000-10-31                      -4.400000
+2000-11-30                       4.120455
+2000-12-31                      -0.422500
+2001-01-31                       4.370455
+2001-02-28                      -1.082500
+2001-03-31                      -9.311905
+2001-04-30                      -1.065789
+2001-05-31                       1.806818
+2001-06-30                      -2.878571
+2001-07-31                      -0.956818
+2001-08-31                      -0.352381
+2001-09-30                      -7.087500
+2001-10-31                       2.290476
+2001-11-30                       4.292500
+2001-12-31                      -0.481579
+2002-01-31                       0.630435
+2002-02-28                       2.805000
+2002-03-31                      -0.971053
+2002-04-30                      -1.784091
+2002-05-31                      -2.631818
+2002-06-30                       1.177500
+2002-07-31                      -4.278261
+2002-08-31                       2.452381
+2002-09-30                      -2.030000
+2002-10-31                      -0.514286
+2002-11-30                       4.894737
+...                                   ...
+2015-08-31                     -34.302381
+2015-09-30                     -13.222500
+2015-10-31                     -10.282500
+2015-11-30                      -2.455263
+2015-12-31                      -3.079545
+2016-01-31                     -20.902500
+2016-02-29                     -36.926190
+2016-03-31                      18.412500
+2016-04-30                      -2.413889
+2016-05-31                       6.163636
+2016-06-30                      13.795455
+2016-07-31                       2.952500
+2016-08-31                      -9.918182
+2016-09-30                     -17.705000
+2016-10-31                     -17.226316
+2016-11-30                     -15.659524
+2016-12-31                      -5.570455
+2017-01-31                       7.154762
+2017-02-28                      -1.668421
+2017-03-31                      -3.145455
+2017-04-30                      -5.511111
+2017-05-31                      -1.388636
+2017-06-30                     -14.469048
+2017-07-31                       6.652381
+2017-08-31                     -19.411905
+2017-09-30                     -20.495238
+2017-10-31                       1.855000
+2017-11-30                     -19.420455
+2017-12-31                      -2.342500
+2018-01-31                     -22.190000
+
+            Day Wise Variation ( %)   Open to Close
+Date
+2000-06-30                                  0.002424
+2000-07-31                                 -0.004718
+2000-08-31                                  0.001971
+2000-09-30                                 -0.004447
+2000-10-31                                 -0.003499
+2000-11-30                                  0.003474
+2000-12-31                                 -0.000236
+2001-01-31                                  0.003400
+2001-02-28                                 -0.000677
+2001-03-31                                 -0.007013
+2001-04-30                                 -0.000698
+2001-05-31                                  0.001619
+2001-06-30                                 -0.002448
+2001-07-31                                 -0.000826
+2001-08-31                                 -0.000317
+2001-09-30                                 -0.006866
+2001-10-31                                  0.002500
+2001-11-30                                  0.004312
+2001-12-31                                 -0.000385
+2002-01-31                                  0.000633
+2002-02-28                                  0.002643
+2002-03-31                                 -0.000794
+2002-04-30                                 -0.001563
+2002-05-31                                 -0.002399
+2002-06-30                                  0.001189
+2002-07-31                                 -0.004190
+2002-08-31                                  0.002525
+2002-09-30                                 -0.002029
+2002-10-31                                 -0.000500
+2002-11-30                                  0.004923
+...                                              ...
+2015-08-31                                 -0.004161
+2015-09-30                                 -0.001622
+2015-10-31                                 -0.001233
+2015-11-30                                 -0.000265
+2015-12-31                                 -0.000366
+2016-01-31                                 -0.002692
+2016-02-29                                 -0.005065
+2016-03-31                                  0.002560
+2016-04-30                                 -0.000282
+2016-05-31                                  0.000785
+2016-06-30                                  0.001714
+2016-07-31                                  0.000354
+2016-08-31                                 -0.001138
+2016-09-30                                 -0.001999
+2016-10-31                                 -0.001966
+2016-11-30                                 -0.001790
+2016-12-31                                 -0.000658
+2017-01-31                                  0.000856
+2017-02-28                                 -0.000154
+2017-03-31                                 -0.000341
+2017-04-30                                 -0.000592
+2017-05-31                                 -0.000153
+2017-06-30                                 -0.001499
+2017-07-31                                  0.000683
+2017-08-31                                 -0.001940
+2017-09-30                                 -0.002045
+2017-10-31                                  0.000196
+2017-11-30                                 -0.001872
+2017-12-31                                 -0.000216
+2018-01-31                                 -0.002110
+
+[212 rows x 6 columns]
+>>>
+>>> import threading
+>>> import concurrent.futures
+>>> def w(x):
+...     time.sleep(10)
+...     print(threading.current_thread().getName(),x)
+...
+>>> import time
+>>> w()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: w() missing 1 required positional argument: 'x'
+>>> w(20)
+MainThread 20
+>>> t = threading.Thread(target=w, args=(20,))
+>>> t.start()
+>>>
+>>>
+>>>
+>>>
+>>>
+>>> Thread-1 20
+
+>>>
+>>> l = list(range(100))
+>>> res = list(map(lambda x: x*x, l))
+>>> ex = concurrent.futures.ThreadPoolExecutor(max_workers=4
+)
+>>>
+>>> res = ex.map(lambda x:x*x,l)
+>>> list(res)
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196
+, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676
+, 729, 784, 841, 900, 961, 1024, 1089, 1156, 1225, 1296, 136
+9, 1444, 1521, 1600, 1681, 1764, 1849, 1936, 2025, 2116, 220
+9, 2304, 2401, 2500, 2601, 2704, 2809, 2916, 3025, 3136, 324
+9, 3364, 3481, 3600, 3721, 3844, 3969, 4096, 4225, 4356, 448
+9, 4624, 4761, 4900, 5041, 5184, 5329, 5476, 5625, 5776, 592
+9, 6084, 6241, 6400, 6561, 6724, 6889, 7056, 7225, 7396, 756
+9, 7744, 7921, 8100, 8281, 8464, 8649, 8836, 9025, 9216, 940
+9, 9604, 9801]
+>>> from pkg.mex import download
+>>> urls = ["http://www.google.co.in" for i in range(10)]
+>>> len(urls)
+10
+>>> res = ex.map(download,urls)
+>>>
+>>>
+>>>
+>>>
+>>> Starting to download  http://www.google.co.in  from thre
+ad  Thread-3
+Starting to download  http://www.google.co.in  from thread
+Thread-4
+Starting to download  http://www.google.co.in  from thread
+Thread-5
+Starting to download  http://www.google.co.in  from thread
+Thread-2
+
+>>>
+>>>
+>>>
+>>> Starting to download  http://www.google.co.in  from thre
+ad  Thread-3
+Starting to download  http://www.google.co.in  from thread
+Thread-4
+Starting to download  http://www.google.co.in  from thread
+Thread-2
+Starting to download  http://www.google.co.in  from thread
+Thread-5
+Starting to download  http://www.google.co.in  from thread
+Thread-3
+Starting to download  http://www.google.co.in  from thread
+Thread-5
+
+>>>
+>>>
+>>> list(res)
+[['http://www.google.co.in', 13526], ['http://www.google.co.
+in', 13534], ['http://www.google.co.in', 13649], ['http://ww
+w.google.co.in', 13575], ['http://www.google.co.in', 13584],
+ ['http://www.google.co.in', 13511], ['http://www.google.co.
+in', 13555], ['http://www.google.co.in', 13565], ['http://ww
+w.google.co.in', 13447], ['http://www.google.co.in', 13565]]
+
+>>> async def w():
+...     download("http://www.google.co.in")
+...
+>>> wa = w()
+>>> import asyncio
+>>> loop = asyncio.get_event_loop()
+>>> loop.run_until_complete(wa)
+Starting to download  http://www.google.co.in  from thread
+MainThread
+>>> ex.shitdown()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'ThreadPoolExecutor' object has no attribute
+ 'shitdown'
+>>> ex.shutdown()
+>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

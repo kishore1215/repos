@@ -1,0 +1,67 @@
+Day1
+·        Language Basics.
+·        Collections(list tuple, dict set)
+
+Day-2
+·        Functions, comprehension
+·        Modules, package 
+·        xml,json, csv handling 
+
+Day-3
+·        Generators
+·        Exception Handling.
+·        Object Oriented Programming
+Day-4
+·         iterators, decorators
+·         numpy, pandas with plot intro    
+·         Threading
+·         asynchronous programming
+
+S/W-1:
+Download and double click (it's a big file and harddisk space requirement 2GB)
+    https://repo.continuum.io/archive/Anaconda3-5.0.1-Windows-x86_64.exe
+Notedown the instllation dir , let's say INSTALL_DIR 
+Update system environment variable path by following below 
+STEP: Open control panel -> System and Security -> System 
+-> Advanced System settings -> Advanced Tab -> Environment Variables 
+-> Edit 'PATH' from down window 
+  Append INSTALL_DIR;INSTALL_DIR\Scripts 
+  Then Apply and OK 
+  
+CHECK:
+    Open a command prompt and type 'python'
+    
+    
+S/W-2:
+    Download notepad++ from https://notepad-plus-plus.org/download/v7.5.4.html
+    and install 
+    
+    
+#Updated TOC   
+Day 3
+    parallel assignments 
+    LGB
+    lambda
+    sorted
+    
+    class 
+    unittest 
+    Exception
+    class primer 
+    Hands on 
+        Fraction 
+        File(dir) class with getMaxSizeFile()
+        Poly class taking an...a1 with add/sub/mul with another poly, int, float, str 
+    
+    
+   
+Day-4 
+    RE 
+    CGI
+    generator expression 
+    Yield
+    decorators
+    
+    pandas and xls and plot 
+    Threading
+    async 

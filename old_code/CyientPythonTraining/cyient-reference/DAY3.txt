@@ -1,0 +1,530 @@
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+D:\PPT>cd python/hands
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> def add(x,y):
+...     return x+y
+...
+>>> add(2,3)
+5
+>>> a = 1
+>>> b = 2
+>>> a,b = b,a
+>>> b
+1
+>>> a
+2
+>>> a, *b, c = 1,2,3,4
+>>> a,b,c
+(1, [2, 3], 4)
+>>> def f(a, b=0, *c):
+...     return [a,b,c]
+...
+>>> f(1)
+[1, 0, ()]
+>>> f(1,2,3,4)
+[1, 2, (3, 4)]
+>>> def f(*args):
+...     return args
+...
+>>>
+>>> f()
+()
+>>> f(1)
+(1,)
+>>> f(1,2)
+(1, 2)
+>>> f(1,2,3)
+(1, 2, 3)
+>>> l = [1,2,3]
+>>> f(l[0],l[1],l[2])
+(1, 2, 3)
+>>> f(*l)
+(1, 2, 3)
+>>> #write mysum function
+...
+>>> sum([1,2,3])
+6
+>>> lst = [20,100,1]
+>>> def mysum(*numbers):
+...     i = 0
+...     for x in numbers:
+...             i += x
+...     return i
+...
+>>> def mysum(*numbers):
+...     return sum(numbers)
+...
+>>> mysum(1,2,3,4)
+10
+>>> mysum(*lst)
+121
+>>>
+>>>
+>>> def f(args):
+...     return sum(args)
+...
+>>> def f1(*args):
+...     return sum(args)
+...
+>>> f([1,2,3])
+6
+>>> f1(1,2,3)
+6
+>>> f(1,2,3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: f() takes 1 positional argument but 3 were given
+>>> f1([1,2,3])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in f1
+TypeError: unsupported operand type(s) for +: 'int' and 'lis
+t'
+>>> def f1(*args):
+...     return mysum(*args)
+...
+>>> f1(1,2,3)
+6
+>>> def p(x)
+  File "<stdin>", line 1
+    def p(x)
+           ^
+SyntaxError: invalid syntax
+>>> def p(x):
+...     print(x+y)
+...
+>>> p(2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in p
+NameError: name 'y' is not defined
+>>> y= 10
+>>> p(2)
+12
+>>> def p(x):
+...     y = 50
+...     print(x+y)
+...
+>>> p(2)
+52
+>>> def p(s):
+...     return len(s)
+...
+>>> p("OK")
+2
+>>> len = 50
+>>> p("OK")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in p
+TypeError: 'int' object is not callable
+>>> del len
+>>> p("OK")
+2
+>>>
+>>>
+>>>
+>>> def f(x,y):
+...     z = g(y)
+...     return x+z
+...
+>>> def g(y):
+...     return 20
+...
+>>> def main():
+...     y = 20
+...     f(2,y)
+...
+>>> def add(x,y)
+  File "<stdin>", line 1
+    def add(x,y)
+               ^
+SyntaxError: invalid syntax
+>>> def add(x,y):
+...     return x+y
+...
+>>> add(2,3)
+5
+>>> type(add)
+<class 'function'>
+>>> type(1)
+<class 'int'>
+>>> a = 1
+>>> 1
+1
+>>> add1 = lambda x,y : x+y
+>>> type(add1)
+<class 'function'>
+>>> add1(2,3)
+5
+>>> add(2,3)
+5
+>>> l = [1,2,3]
+>>> [e*e for e in l]
+[1, 4, 9]
+>>> def sq(x):
+...     return x*x
+...
+>>> [sq(e) for e in l]
+[1, 4, 9]
+>>> list(map(sq, l))
+[1, 4, 9]
+>>> list(map(lambda x: x*x, l))
+[1, 4, 9]
+>>> 0.1+0.1+0.1
+0.30000000000000004
+>>> import decimal
+>>> decimal.Decimal("0.1")+decimal.Decimal("0.1")+decimal.De
+cimal("0.1")
+Decimal('0.3')
+>>>
+>>> import random
+>>> l = [ random.randint(20,90) for i in range(10)]
+>>> l
+[75, 31, 44, 36, 44, 27, 90, 48, 80, 50]
+>>> s = sorted(l)
+>>> s
+[27, 31, 36, 44, 44, 48, 50, 75, 80, 90]
+>>> sorted(l, reverse=True)
+[90, 80, 75, 50, 48, 44, 44, 36, 31, 27]
+>>> s = ['a', 'bb', 'c', 'xyz']
+>>> sorted(s)
+['a', 'bb', 'c', 'xyz']
+>>> help(sorted)
+Help on built-in function sorted in module builtins:
+
+sorted(iterable, key=None, reverse=False)
+    Return a new list containing all items from the iterable
+ in ascending order.
+
+    A custom key function can be supplied to customise the s
+ort order, and the
+    reverse flag can be set to request the result in descend
+ing order.
+
+>>>
+>>> sorted(s, key=lambda e: len(e) )
+['a', 'c', 'bb', 'xyz']
+>>> d = {'ok': 20, 'ab': 500}
+>>> sorted(d)
+['ab', 'ok']
+>>> sorted(d.items())
+[('ab', 500), ('ok', 20)]
+>>> d.items()
+dict_items([('ok', 20), ('ab', 500)])
+>>> def p(x):
+...     print(type(x), x)
+...
+>>> sorted(d, key =lambda e:p(e))
+<class 'str'> ok
+<class 'str'> ab
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unorderable types: NoneType() < NoneType()
+>>> sorted(d, key =lambda e:d[e])
+['ok', 'ab']
+>>> sorted(d.items(), key =lambda e:e[1])
+[('ok', 20), ('ab', 500)]
+>>> sorted(d.items())
+[('ab', 500), ('ok', 20)]
+>>>
+>>> from sqlite3 import connect
+>>> con = connect(r"sample.db")
+>>> cur = con.cursor()
+>>> cur.execute("create table emp (id int, name varchar(20),
+ age int ")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+sqlite3.OperationalError: near " ": syntax error
+>>> cur.execute("create table emp (id int, name varchar(20),
+ age int )")
+<sqlite3.Cursor object at 0x00000029A4ADFD50>
+>>> cur.execute("insert into emp values ( 1, 'ABC', 45)")
+<sqlite3.Cursor object at 0x00000029A4ADFD50>
+>>> cur.execute("insert into emp values ( 2, 'MNO', 10)")
+<sqlite3.Cursor object at 0x00000029A4ADFD50>
+>>> cur.execute("insert into emp values ( 2, 'XYZ', 3)")
+<sqlite3.Cursor object at 0x00000029A4ADFD50>
+>>> con.commit()
+>>> q = cur.execute("select * from emp")
+>>> rows = list(q.fetchall())
+>>> rows
+[(1, 'ABC', 45), (2, 'MNO', 10), (2, 'XYZ', 3)]
+>>> sorted(rows)
+[(1, 'ABC', 45), (2, 'MNO', 10), (2, 'XYZ', 3)]
+>>> (1,2) < (1,3)
+True
+>>> (2,1) < (1,2)
+False
+>>> "a" < "b"
+True
+>>> "ax" < "ab"
+False
+>>> [row[1]  for row in rows]
+['ABC', 'MNO', 'XYZ']
+>>> sorted(rows, key = lambda row: row[2])
+[(2, 'XYZ', 3), (2, 'MNO', 10), (1, 'ABC', 45)]
+>>> from operator import itemgetter
+>>> sorted(rows, key = itemgetter(2))
+[(2, 'XYZ', 3), (2, 'MNO', 10), (1, 'ABC', 45)]
+>>> sorted(rows, key = itemgetter(2,1))
+[(2, 'XYZ', 3), (2, 'MNO', 10), (1, 'ABC', 45)]
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> a.add(b)
+5
+>>> print(a)
+MyInt(2)
+>>> MyInt.__init__(a,2)
+>>> a.value
+2
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> a.india
+2
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> a.india
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'MyInt' object has no attribute 'india'
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> a.add(b)
+5
+>>> print(a)
+MyInt(2)
+>>> b.value
+3
+>>> 1 + 2
+3
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> c = a+b
+>>> print(c)
+MyInt(5)
+>>>
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__d
+ir__', '__doc__', '__eq__', '__format__', '__ge__', '__getat
+tribute__', '__getitem__', '__getnewargs__', '__gt__', '__ha
+sh__', '__init__', '__iter__', '__le__', '__len__', '__lt__'
+, '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '
+__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setat
+tr__', '__sizeof__', '__str__', '__subclasshook__', 'capital
+ize', 'casefold', 'center', 'count', 'encode', 'endswith', '
+expandtabs', 'find', 'format', 'format_map', 'index', 'isaln
+um', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'isl
+ower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'is
+upper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'pa
+rtition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition
+', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith',
+'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+>>> dir(list)
+['__add__', '__class__', '__contains__', '__delattr__', '__d
+elitem__', '__dir__', '__doc__', '__eq__', '__format__', '__
+ge__', '__getattribute__', '__getitem__', '__gt__', '__hash_
+_', '__iadd__', '__imul__', '__init__', '__iter__', '__le__'
+, '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__re
+duce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmu
+l__', '__setattr__', '__setitem__', '__sizeof__', '__str__',
+ '__subclasshook__', 'append', 'clear', 'copy', 'count', 'ex
+tend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
+]
+>>> dir(set)
+['__and__', '__class__', '__contains__', '__delattr__', '__d
+ir__', '__doc__', '__eq__', '__format__', '__ge__', '__getat
+tribute__', '__gt__', '__hash__', '__iand__', '__init__', '_
+_ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__le
+n__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '
+__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub
+__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__
+sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy
+', 'difference', 'difference_update', 'discard', 'intersecti
+on', 'intersection_update', 'isdisjoint', 'issubset', 'issup
+erset', 'pop', 'remove', 'symmetric_difference', 'symmetric_
+difference_update', 'union', 'update']
+>>> c = MyInt.__add__(a,b)
+>>> print(c)
+MyInt(5)
+>>> c = a.__add__(b)
+>>> print(c)
+MyInt(5)
+>>> c = a + b
+>>> print(c)
+MyInt(5)
+>>> 1 == 1
+True
+>>> MyInt(1) == MyInt(1)
+False
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> a == MyInt(2)
+True
+>>> a > b
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unorderable types: MyInt() > MyInt()
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> a >= b
+False
+>>> a <= b
+True
+>>> a < b
+True
+>>> a > b
+False
+>>> dir(int)
+['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '_
+_class__', '__delattr__', '__dir__', '__divmod__', '__doc__'
+, '__eq__', '__float__', '__floor__', '__floordiv__', '__for
+mat__', '__ge__', '__getattribute__', '__getnewargs__', '__g
+t__', '__hash__', '__index__', '__init__', '__int__', '__inv
+ert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul_
+_', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__
+pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__',
+ '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__'
+, '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__'
+, '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '
+__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__'
+, '__subclasshook__', '__truediv__', '__trunc__', '__xor__',
+ 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'im
+ag', 'numerator', 'real', 'to_bytes']
+>>> dir(function)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'function' is not defined
+>>> def f(a):
+...     return a
+...
+>>> dir(f)
+['__annotations__', '__call__', '__class__', '__closure__',
+'__code__', '__defaults__', '__delattr__', '__dict__', '__di
+r__', '__doc__', '__eq__', '__format__', '__ge__', '__get__'
+, '__getattribute__', '__globals__', '__gt__', '__hash__', '
+__init__', '__kwdefaults__', '__le__', '__lt__', '__module__
+', '__name__', '__ne__', '__new__', '__qualname__', '__reduc
+e__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof_
+_', '__str__', '__subclasshook__']
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> a(8)
+<pkg.MyInt.MyInt object at 0x0000003ECBF3D0F0>
+>>> c = a(8)
+>>> print(c)
+MyInt(256)
+>>> quit()
+
+D:\PPT\python\hands>python -m unittest -v mytest
+test_add (mytest.MyTest)
+Testing add functionality ... ok
+
+------------------------------------------------------------
+----------
+Ran 1 test in 0.000s
+
+OK
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> dir(object)
+['__class__', '__delattr__', '__dir__', '__doc__', '__eq__',
+ '__format__', '__ge__', '__getattribute__', '__gt__', '__ha
+sh__', '__init__', '__le__', '__lt__', '__ne__', '__new__',
+'__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '_
+_sizeof__', '__str__', '__subclasshook__']
+>>> class A:
+...     pass
+...
+>>> A.__mro__
+(<class '__main__.A'>, <class 'object'>)
+>>> dir(A)
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__
+', '__eq__', '__format__', '__ge__', '__getattribute__', '__
+gt__', '__hash__', '__init__', '__le__', '__lt__', '__module
+__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__
+repr__', '__setattr__', '__sizeof__', '__str__', '__subclass
+hook__', '__weakref__']
+>>>
+>>> raise IndentationError("Errrrrrrrrr")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndentationError: Errrrrrrrrr
+>>> class MyException(Exception):
+...     pass
+...
+>>> raise MyException("OMG")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+__main__.MyException: OMG
+>>> def f():
+...     raise MyException("OMG")
+...
+>>> try:
+...     f()
+... except Exception as ex:
+...     print(ex)
+... finally:
+...     print("always executed")
+...
+OMG
+always executed
+>>>

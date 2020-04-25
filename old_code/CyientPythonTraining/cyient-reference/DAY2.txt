@@ -1,0 +1,667 @@
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> s = {}
+>>> type(s)
+<class 'dict'>
+>>> s = set()
+>>> type(s)
+<class 'set'>
+>>> s = {1,2,3}
+>>> len(s)
+3
+>>> 2 in s
+True
+>>> { [1,2] }
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> { (1,2) }
+{(1, 2)}
+>>> for e in s:
+...     print(e)
+...
+1
+2
+3
+>>> d = {'ok': 2, 1: 'new'}
+>>> type(d)
+<class 'dict'>
+>>> len(d)
+2
+>>> 'ok' in d
+True
+>>> d.keys()
+dict_keys(['ok', 1])
+>>> 2 not in d
+True
+>>> d.values()
+dict_values([2, 'new'])
+>>> d['ok']
+2
+>>> d[1]
+'new'
+>>> d[1] = [2,3,4]
+>>> d
+{'ok': 2, 1: [2, 3, 4]}
+>>> del d[1]
+>>> d
+{'ok': 2}
+>>> d['nok'] = 1
+>>> d
+{'ok': 2, 'nok': 1}
+>>> for k in d:
+...     print(k, d[k])
+...
+ok 2
+nok 1
+>>> for k,v in d.items():
+...     print(k,v)
+...
+ok 2
+nok 1
+>>> d.items()
+dict_items([('ok', 2), ('nok', 1)])
+>>> d = {}
+>>> dir(dict)
+['__class__', '__contains__', '__delattr__', '__delitem__',
+'__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__g
+etattribute__', '__getitem__', '__gt__', '__hash__', '__init
+__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '_
+_new__', '__reduce__', '__reduce_ex__', '__repr__', '__setat
+tr__', '__setitem__', '__sizeof__', '__str__', '__subclassho
+ok__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys',
+'pop', 'popitem', 'setdefault', 'update', 'values']
+>>>
+>>> l = [1,2,3,4]
+>>> res = [1,4,9,16]
+>>> res = []
+>>> for e in l:
+...     res.append(e*e)
+...
+>>> res
+[1, 4, 9, 16]
+>>> res = [ e*e  for e in l]
+>>> res
+[1, 4, 9, 16]
+>>> [ e*e  for e in l]
+[1, 4, 9, 16]
+>>> { e*e  for e in l}
+{16, 1, 4, 9}
+>>> { e:e*e  for e in l}
+{1: 1, 2: 4, 3: 9, 4: 16}
+>>> [ e*e  for e in l for e % 2 == 1]
+  File "<stdin>", line 1
+    [ e*e  for e in l for e % 2 == 1]
+                                 ^
+SyntaxError: invalid syntax
+>>> [ e*e  for e in l if e % 2 == 1]
+[1, 9]
+>>> [(x,y) for x in l if x % 2 == 0 for y in l if y%2 ==1]
+[(2, 1), (2, 3), (4, 1), (4, 3)]
+>>> res = []
+>>> for x in l:
+...     if x % 2 == 0:
+...             for y in l:
+...                     if y%2 ==1:
+...                             res.append( (x,y) )
+...
+>>> res
+[(2, 1), (2, 3), (4, 1), (4, 3)]
+>>> {x:y for x in l if x % 2 == 0 for y in l if y%2 ==1}
+{2: 3, 4: 3}
+>>>
+>>> l = [ ('ok',2,3), ('nok,100,200)]
+  File "<stdin>", line 1
+    l = [ ('ok',2,3), ('nok,100,200)]
+                                    ^
+SyntaxError: EOL while scanning string literal
+>>> l = [ ('ok',2,3), ('nok',100,200)]
+>>> res = ['ok', 'nok']
+>>> res = []
+>>> for t in l:
+...     res.append( t[0] )
+...
+>>> res
+['ok', 'nok']
+>>> [ t[0] for t in l ]
+['ok', 'nok']
+>>> l
+[('ok', 2, 3), ('nok', 100, 200)]
+>>> [ (2,3), (100,200)]
+[(2, 3), (100, 200)]
+>>> [ (t[1],t[2]) for t in l]
+[(2, 3), (100, 200)]
+>>> [ t[1:] for t in l]
+[(2, 3), (100, 200)]
+>>> l
+[('ok', 2, 3), ('nok', 100, 200)]
+>>> { 'ok': (2,3), 'nok':(100,200) }
+{'ok': (2, 3), 'nok': (100, 200)}
+>>> { t[0]:t[1:]  for t in l}
+{'ok': (2, 3), 'nok': (100, 200)}
+>>>
+>>>
+>>> list(zip(["ok", "nok"], [100,200]))
+[('ok', 100), ('nok', 200)]
+>>> dict(zip(["ok", "nok"], [100,200]))
+{'ok': 100, 'nok': 200}
+>>> list(enumerate(["ok", "nok"]))
+[(0, 'ok'), (1, 'nok')]
+>>>
+>>>
+>>> import glob
+>>> glob.glob("*")
+['data', 'DAY1.txt', 'first.py', 'quick_datastructure.txt',
+'reference', 'syn.txt', 'toc.txt']
+>>> f = open(r"first.py", "rt")
+>>> lines = f.readlines()
+>>> f.close()
+>>> f = open(r"D:\PPT\python\hands\first.py", "rt")
+>>> lines = f.readlines()
+>>> f.close()
+>>> dir(f)
+['_CHUNK_SIZE', '__class__', '__del__', '__delattr__', '__di
+ct__', '__dir__', '__doc__', '__enter__', '__eq__', '__exit_
+_', '__format__', '__ge__', '__getattribute__', '__getstate_
+_', '__gt__', '__hash__', '__init__', '__iter__', '__le__',
+'__lt__', '__ne__', '__new__', '__next__', '__reduce__', '__
+reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__st
+r__', '__subclasshook__', '_checkClosed', '_checkReadable',
+'_checkSeekable', '_checkWritable', '_finalizing', 'buffer',
+ 'close', 'closed', 'detach', 'encoding', 'errors', 'fileno'
+, 'flush', 'isatty', 'line_buffering', 'mode', 'name', 'newl
+ines', 'read', 'readable', 'readline', 'readlines', 'seek',
+'seekable', 'tell', 'truncate', 'writable', 'write', 'writel
+ines']
+>>> f = open(r"first.py.bk", "wt")
+>>> f.writelines(lines)
+>>> f.close()
+>>> glob.glob("*")
+['data', 'DAY1.txt', 'first.py', 'first.py.bk', 'quick_datas
+tructure.txt', 'reference', 'syn.txt', 'toc.txt']
+>>> f = open(r"first.py.bk", "at")
+>>> f.writelines(["---END---\n", "END of file\n"])
+>>> f.close()
+>>> f = open(r"first.py.bk", "rt")
+>>> lines = f.readlines()
+>>> f.close()
+>>> lines[-2:]
+['---END---\n', 'END of file\n']
+>>> len(lines)
+65
+>>> type(lines)
+<class 'list'>
+>>> with open(r"first.py", "rt") as f:
+...     lines = f.readlines()
+...
+>>> lines
+['import sys \n', 's = sys.argv[1]\n', '#print count of each
+ character \n', '#Take each char(ch) from s\n', 'd = {}\n',
+'for ch in s:\n', '    #initialize counter \n', '    counter
+ = 0\n', '    #Take each char(ch1) from s\n', '    for ch1 i
+n s:\n', '        #if ch and ch1 are same \n', '        if c
+h == ch1:\n', '            #increment counter \n', '
+    counter = counter + 1\n', '    d[ch] = counter \n', '
+ print(ch, counter) \n', '##################################
+##########\n', 's = "Hello World"\n', 'create a empty dict \
+n', 'Take each char(ch) from s\n', '    check whether ch exi
+sts in empty dict?\n', '    if does not exist\n', '        c
+reate ch as key and initialize to 1 \n', '    else \n', "
+     increment ch 's value \n", 'print dict \n', '    \n', '
+#############################################\n', '[]  list
+- Indexing-A, Duplicates-A, IO - A, Mutable\n', '()      tup
+le - Immutable, -----above-----\n', '      \n', '{}  set - I
+ndexing - NA, Duplicates - NA, IO-NA, Mutable\n', '      fro
+zenset - Immutable , -----above---\n', '----------------\n',
+ 'dict - key and associated value, key is like set \n', '\n'
+, '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n'
+, '\n', 'l = [1,2,3,4]\n', 'res = [1,4,9,16]\n', '\n', 'Crea
+te empty list \n', 'Take each element from input list\n', '
+   if that element is odd\n', '        append to empty list
+\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n']
+>>>
+>>>
+>>> lines
+['import sys \n', 's = sys.argv[1]\n', '#print count of each
+ character \n', '#Take each char(ch) from s\n', 'd = {}\n',
+'for ch in s:\n', '    #initialize counter \n', '    counter
+ = 0\n', '    #Take each char(ch1) from s\n', '    for ch1 i
+n s:\n', '        #if ch and ch1 are same \n', '        if c
+h == ch1:\n', '            #increment counter \n', '
+    counter = counter + 1\n', '    d[ch] = counter \n', '
+ print(ch, counter) \n', '##################################
+##########\n', 's = "Hello World"\n', 'create a empty dict \
+n', 'Take each char(ch) from s\n', '    check whether ch exi
+sts in empty dict?\n', '    if does not exist\n', '        c
+reate ch as key and initialize to 1 \n', '    else \n', "
+     increment ch 's value \n", 'print dict \n', '    \n', '
+#############################################\n', '[]  list
+- Indexing-A, Duplicates-A, IO - A, Mutable\n', '()      tup
+le - Immutable, -----above-----\n', '      \n', '{}  set - I
+ndexing - NA, Duplicates - NA, IO-NA, Mutable\n', '      fro
+zenset - Immutable , -----above---\n', '----------------\n',
+ 'dict - key and associated value, key is like set \n', '\n'
+, '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n'
+, '\n', 'l = [1,2,3,4]\n', 'res = [1,4,9,16]\n', '\n', 'Crea
+te empty list \n', 'Take each element from input list\n', '
+   if that element is odd\n', '        append to empty list
+\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n']
+>>> list(enumerate(lines))
+[(0, 'import sys \n'), (1, 's = sys.argv[1]\n'), (2, '#print
+ count of each character \n'), (3, '#Take each char(ch) from
+ s\n'), (4, 'd = {}\n'), (5, 'for ch in s:\n'), (6, '    #in
+itialize counter \n'), (7, '    counter = 0\n'), (8, '    #T
+ake each char(ch1) from s\n'), (9, '    for ch1 in s:\n'), (
+10, '        #if ch and ch1 are same \n'), (11, '        if
+ch == ch1:\n'), (12, '            #increment counter \n'), (
+13, '            counter = counter + 1\n'), (14, '    d[ch]
+= counter \n'), (15, '    print(ch, counter) \n'), (16, '###
+#########################################\n'), (17, 's = "He
+llo World"\n'), (18, 'create a empty dict \n'), (19, 'Take e
+ach char(ch) from s\n'), (20, '    check whether ch exists i
+n empty dict?\n'), (21, '    if does not exist\n'), (22, '
+      create ch as key and initialize to 1 \n'), (23, '    e
+lse \n'), (24, "        increment ch 's value \n"), (25, 'pr
+int dict \n'), (26, '    \n'), (27, '#######################
+######################\n'), (28, '[]  list - Indexing-A, Dup
+licates-A, IO - A, Mutable\n'), (29, '()      tuple - Immuta
+ble, -----above-----\n'), (30, '      \n'), (31, '{}  set -
+Indexing - NA, Duplicates - NA, IO-NA, Mutable\n'), (32, '
+    frozenset - Immutable , -----above---\n'), (33, '-------
+---------\n'), (34, 'dict - key and associated value, key is
+ like set \n'), (35, '\n'), (36, '\n'), (37, '\n'), (38, '\n
+'), (39, '\n'), (40, '\n'), (41, '\n'), (42, '\n'), (43, '\n
+'), (44, '\n'), (45, '\n'), (46, '\n'), (47, 'l = [1,2,3,4]\
+n'), (48, 'res = [1,4,9,16]\n'), (49, '\n'), (50, 'Create em
+pty list \n'), (51, 'Take each element from input list\n'),
+(52, '    if that element is odd\n'), (53, '        append t
+o empty list \n'), (54, '\n'), (55, '\n'), (56, '\n'), (57,
+'\n'), (58, '\n'), (59, '\n'), (60, '\n'), (61, '\n'), (62,
+'\n')]
+>>> {t[0]:len(t[1])      for t in list(enumerate(lines)) }
+{0: 12, 1: 16, 2: 32, 3: 27, 4: 7, 5: 13, 6: 25, 7: 16, 8: 3
+2, 9: 18, 10: 33, 11: 22, 12: 32, 13: 34, 14: 21, 15: 24, 16
+: 45, 17: 18, 18: 21, 19: 26, 20: 43, 21: 22, 22: 46, 23: 10
+, 24: 31, 25: 12, 26: 5, 27: 46, 28: 53, 29: 43, 30: 7, 31:
+57, 32: 44, 33: 17, 34: 50, 35: 1, 36: 1, 37: 1, 38: 1, 39:
+1, 40: 1, 41: 1, 42: 1, 43: 1, 44: 1, 45: 1, 46: 1, 47: 14,
+48: 17, 49: 1, 50: 19, 51: 34, 52: 27, 53: 30, 54: 1, 55: 1,
+ 56: 1, 57: 1, 58: 1, 59: 1, 60: 1, 61: 1, 62: 1}
+>>> {t[0]+1:len(t[1])      for t in list(enumerate(lines)) }
+
+{1: 12, 2: 16, 3: 32, 4: 27, 5: 7, 6: 13, 7: 25, 8: 16, 9: 3
+2, 10: 18, 11: 33, 12: 22, 13: 32, 14: 34, 15: 21, 16: 24, 1
+7: 45, 18: 18, 19: 21, 20: 26, 21: 43, 22: 22, 23: 46, 24: 1
+0, 25: 31, 26: 12, 27: 5, 28: 46, 29: 53, 30: 43, 31: 7, 32:
+ 57, 33: 44, 34: 17, 35: 50, 36: 1, 37: 1, 38: 1, 39: 1, 40:
+ 1, 41: 1, 42: 1, 43: 1, 44: 1, 45: 1, 46: 1, 47: 1, 48: 14,
+ 49: 17, 50: 1, 51: 19, 52: 34, 53: 27, 54: 30, 55: 1, 56: 1
+, 57: 1, 58: 1, 59: 1, 60: 1, 61: 1, 62: 1, 63: 1}
+>>>
+>>> glob(r"data\*")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'module' object is not callable
+>>> glob.glob(r"data\*")
+['data\\example-handson.csv', 'data\\example-handson.xml', '
+data\\example.csv', 'data\\example.json', 'data\\example.xml
+', 'data\\example_1.csv']
+>>> import csv
+>>> f = open(r"data\example.csv")
+>>> reader = csv.reader(f)
+>>> rows = list(reader)
+>>> f.close()
+>>> rows
+[['Spam', ' Spam', ' Spam', ' Spam', ' Spam', ' Baked Beans'
+], ['Spam', ' Lovely Spam', ' Wonderful Spam']]
+>>> [row[0]  for row in rows]
+['Spam', 'Spam']
+>>> dir(csv)
+['Dialect', 'DictReader', 'DictWriter', 'Error', 'QUOTE_ALL'
+, 'QUOTE_MINIMAL', 'QUOTE_NONE', 'QUOTE_NONNUMERIC', 'Sniffe
+r', 'StringIO', '_Dialect', '__all__', '__builtins__', '__ca
+ched__', '__doc__', '__file__', '__loader__', '__name__', '_
+_package__', '__spec__', '__version__', 'excel', 'excel_tab'
+, 'field_size_limit', 'get_dialect', 'list_dialects', 're',
+'reader', 'register_dialect', 'unix_dialect', 'unregister_di
+alect', 'writer']
+>>> import math
+>>> dir(math)
+['__doc__', '__loader__', '__name__', '__package__', '__spec
+__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'ata
+nh', 'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf
+', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fm
+od', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclo
+se', 'isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log',
+ 'log10', 'log1p', 'log2', 'modf', 'nan', 'pi', 'pow', 'radi
+ans', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'trunc']
+>>> import random
+>>> dir(random)
+['BPF', 'LOG4', 'NV_MAGICCONST', 'RECIP_BPF', 'Random', 'SG_
+MAGICCONST', 'SystemRandom', 'TWOPI', '_BuiltinMethodType',
+'_MethodType', '_Sequence', '_Set', '__all__', '__builtins__
+', '__cached__', '__doc__', '__file__', '__loader__', '__nam
+e__', '__package__', '__spec__', '_acos', '_ceil', '_cos', '
+_e', '_exp', '_inst', '_log', '_pi', '_random', '_sha512', '
+_sin', '_sqrt', '_test', '_test_generator', '_urandom', '_wa
+rn', 'betavariate', 'choice', 'expovariate', 'gammavariate',
+ 'gauss', 'getrandbits', 'getstate', 'lognormvariate', 'norm
+alvariate', 'paretovariate', 'randint', 'random', 'randrange
+', 'sample', 'seed', 'setstate', 'shuffle', 'triangular', 'u
+niform', 'vonmisesvariate', 'weibullvariate']
+>>> random.randint(10,20)
+19
+>>> import time
+>>> dir(time)
+['_STRUCT_TM_ITEMS', '__doc__', '__loader__', '__name__', '_
+_package__', '__spec__', 'altzone', 'asctime', 'clock', 'cti
+me', 'daylight', 'get_clock_info', 'gmtime', 'localtime', 'm
+ktime', 'monotonic', 'perf_counter', 'process_time', 'sleep'
+, 'strftime', 'strptime', 'struct_time', 'time', 'timezone',
+ 'tzname']
+>>> time.sleep(2)
+>>> import datetime
+>>> dir(datetime)
+['MAXYEAR', 'MINYEAR', '__builtins__', '__cached__', '__doc_
+_', '__file__', '__loader__', '__name__', '__package__', '__
+spec__', '_divide_and_round', 'date', 'datetime', 'datetime_
+CAPI', 'time', 'timedelta', 'timezone', 'tzinfo']
+>>> d = datetime.date.today()
+>>> d
+datetime.date(2018, 2, 28)
+>>> d + datetime.timedelta(days=365)
+datetime.date(2019, 2, 28)
+>>> import xml.etree.ElementTree as ET
+>>> tr = ET.parse(r"data\example.xml")
+>>> root = tr.getroot()
+>>> type(root)
+<class 'xml.etree.ElementTree.Element'>
+>>> root.text
+'\n    '
+>>> root.attrib
+{}
+>>> root.tag
+'data'
+>>> root.findall("./country/rank")
+[<Element 'rank' at 0x000000B476B6DA48>, <Element 'rank' at
+0x000000B476B6DC28>, <Element 'rank' at 0x000000B476B6DDB8>]
+
+>>> [ n.text  for n in root.findall("./country/rank")]
+['1', '4', '68']
+>>> [ int(n.text)  for n in root.findall("./country/rank")]
+[1, 4, 68]
+>>> [ int(n.text)  for n in root.findall("//rank")]
+Traceback (most recent call last):
+  File "C:\Python35\lib\xml\etree\ElementPath.py", line 263,
+ in iterfind
+    selector = _cache[cache_key]
+KeyError: ('//rank', None)
+
+During handling of the above exception, another exception oc
+curred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Python35\lib\xml\etree\ElementPath.py", line 304,
+ in findall
+    return list(iterfind(elem, path, namespaces))
+  File "C:\Python35\lib\xml\etree\ElementPath.py", line 268,
+ in iterfind
+    raise SyntaxError("cannot use absolute path on element")
+
+SyntaxError: cannot use absolute path on element
+>>> [ int(n.text)  for n in root.findall(".//rank")]
+[1, 4, 68]
+>>> dir(root)
+['__class__', '__copy__', '__deepcopy__', '__delattr__', '__
+delitem__', '__dir__', '__doc__', '__eq__', '__format__', '_
+_ge__', '__getattribute__', '__getitem__', '__getstate__', '
+__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt_
+_', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__r
+epr__', '__setattr__', '__setitem__', '__setstate__', '__siz
+eof__', '__str__', '__subclasshook__', 'append', 'clear', 'e
+xtend', 'find', 'findall', 'findtext', 'get', 'getchildren',
+ 'getiterator', 'insert', 'items', 'iter', 'iterfind', 'iter
+text', 'keys', 'makeelement', 'remove', 'set']
+>>> [ n.attrib  for n in root.findall("./country")]
+[{'name': 'Liechtenstein'}, {'name': 'Singapore'}, {'name':
+'Panama'}]
+>>> [ n.attrib['name']  for n in root.findall("./country")]
+['Liechtenstein', 'Singapore', 'Panama']
+>>> #{ n.attrib['name']:  for n in root.findall("./country")
+}
+...
+>>> nn = root.findall("./country")
+>>> nn
+[<Element 'country' at 0x000000B476B64228>, <Element 'countr
+y' at 0x000000B476B6DBD8>, <Element 'country' at 0x000000B47
+6B6DD68>]
+>>> nn[0]
+<Element 'country' at 0x000000B476B64228>
+>>> nn[0].findall("./neighbor")
+[<Element 'neighbor' at 0x000000B476B6DB38>, <Element 'neigh
+bor' at 0x000000B476B6DB88>]
+>>> {n.attrib['name']   for n in nn[0].findall("./neighbor")
+}
+{'Switzerland', 'Austria'}
+>>> [n.attrib['name']   for n in nn[0].findall("./neighbor")
+]
+['Austria', 'Switzerland']
+>>> { n.attrib['name']:[ns.attrib['name']   for ns in n.find
+all("./neighbor")]  for n in root.findall("./country")}
+{'Panama': ['Costa Rica', 'Colombia'], 'Singapore': ['Malays
+ia'], 'Liechtenstein': ['Austria', 'Switzerland']}
+>>>
+>>> import json
+>>> f = open(r"data\example.json", "rt")
+>>> obj = json.load(f)
+>>> f.close()
+>>> obj
+[{'empId': 1, 'details': {'lastName': 'Smith', 'isAlive': Tr
+ue, 'salary': 123.5, 'phoneNumbers': [{'type': 'home', 'numb
+er': '212 555-1234'}, {'type': 'office', 'number': '646 555-
+4567'}, {'type': 'mobile', 'number': '123 456-7890'}], 'chil
+dren': [], 'address': {'city': 'New York', 'state': 'NY', 's
+treetAddress': '21 2nd Street', 'postalCode': '10021-3100'},
+ 'spouse': None, 'age': 25, 'firstName': 'John'}}, {'empId':
+ 20, 'details': {'lastName': 'Smith', 'isAlive': True, 'sala
+ry': 123.5, 'phoneNumbers': [{'type': 'home', 'number': '212
+ 555-1234'}, {'type': 'office', 'number': '646 555-4567'}, {
+'type': 'mobile', 'number': '123 456-7890'}], 'children': []
+, 'address': {'city': 'New York', 'state': 'CL', 'streetAddr
+ess': '21 2nd Street', 'postalCode': '10021-3100'}, 'spouse'
+: None, 'age': 25, 'firstName': 'Johns'}}]
+>>>
+>>> [emp["empId"] for emp in obj]
+[1, 20]
+>>> [emp["details"] for emp in obj]
+[{'lastName': 'Smith', 'isAlive': True, 'salary': 123.5, 'ph
+oneNumbers': [{'type': 'home', 'number': '212 555-1234'}, {'
+type': 'office', 'number': '646 555-4567'}, {'type': 'mobile
+', 'number': '123 456-7890'}], 'children': [], 'address': {'
+city': 'New York', 'state': 'NY', 'streetAddress': '21 2nd S
+treet', 'postalCode': '10021-3100'}, 'spouse': None, 'age':
+25, 'firstName': 'John'}, {'lastName': 'Smith', 'isAlive': T
+rue, 'salary': 123.5, 'phoneNumbers': [{'type': 'home', 'num
+ber': '212 555-1234'}, {'type': 'office', 'number': '646 555
+-4567'}, {'type': 'mobile', 'number': '123 456-7890'}], 'chi
+ldren': [], 'address': {'city': 'New York', 'state': 'CL', '
+streetAddress': '21 2nd Street', 'postalCode': '10021-3100'}
+, 'spouse': None, 'age': 25, 'firstName': 'Johns'}]
+>>> [emp["details"]['firstName'] for emp in obj]
+['John', 'Johns']
+>>>
+>>> import pkg.mex
+>>> pkg.mex.square(20)
+400
+>>> help(pkg.mex.square)
+Help on function square in module pkg.mex:
+
+square(x)
+    Saure function
+    takes one arg
+
+>>> import sys
+>>> sys.path
+['', 'C:\\Python35\\python35.zip', 'C:\\Python35\\DLLs', 'C:
+\\Python35\\lib', 'C:\\Python35', 'C:\\Python35\\lib\\site-p
+ackages']
+>>>
+>>> def add(x,y):
+...     return x+y
+...
+>>> add(2,3)
+5
+>>> add(y=3,x=2)
+5
+>>> add(2,y=3)
+5
+>>> def add1(x,y=20):
+...     return x+y
+...
+>>> add(2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: add() missing 1 required positional argument: 'y'
+
+>>> add1(2)
+22
+>>> add1(2, 20)
+22
+>>> add(x=3,5)
+  File "<stdin>", line 1
+SyntaxError: positional argument follows keyword argument
+>>> sum([1,2,3])
+6
+>>> math.sqrt
+<built-in function sqrt>
+>>> x = 2
+>>> x ** 2
+4
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> import pkg.mex
+>>> pkg.mex.std( [0,1,2,3] )
+1.118033988749895
+>>>
+>>>
+>>> l = [2,3,1,4,5]
+>>> l2 = sorted(l)
+>>> l2
+[1, 2, 3, 4, 5]
+>>> length = 10
+>>> length/2
+5.0
+>>> length//2
+5
+>>> int(length/2)
+5
+>>> l
+[2, 3, 1, 4, 5]
+>>> length = len(l)
+>>> l
+[2, 3, 1, 4, 5]
+>>> length
+5
+>>> length // 2
+2
+>>> l = [2,3,1,4]
+>>> length = len(l)
+>>> length
+4
+>>> length//2
+2
+>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

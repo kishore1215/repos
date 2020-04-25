@@ -1,0 +1,15 @@
+Day1
+·        Language Basics.
+·        Collections(list tuple, dict set)
+Day-2
+·        Functions, comprehension
+·        Modules, package 
+Day-3
+·        Generators
+·        Exception Handling.
+·        Object Oriented Programming
+Day-4
+·         iterators, decorators
+·         xml,json, csv, xls     
+·         Threading
+·         asynchronous programming
